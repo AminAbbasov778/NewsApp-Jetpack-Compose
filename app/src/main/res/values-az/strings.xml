@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">News</string>
+    <string name="Failed_to_fetch_news">Xeberleri elde etmek ugursuz oldu</string>
+    <string name="news_catcher">Xəbər Tutucu</string>
+</resources>

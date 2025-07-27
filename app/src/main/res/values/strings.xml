@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="news_catcher">News Catcher</string>
+    <string name="Failed_to_fetch_news">Failed to fetch news</string>
+</resources>
