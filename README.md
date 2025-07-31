@@ -1,209 +1,113 @@
-📰 News Catcher Jetpack-Compose
-News Catcher is a sleek, Kotlin-based Android news application built with Jetpack Compose, MVVM, and Clean Architecture. It allows users to browse, bookmark, and share news articles, with support for language switching and a modern, responsive UI. The app leverages Kotlin Coroutines for asynchronous operations and Hilt for dependency injection, ensuring a scalable and maintainable codebase.
+# 📰 News Catcher (Jetpack Compose + MVVM + Clean Architecture)
 
-📸 Screenshots
+**News Catcher** is a sleek, Kotlin-based Android news application built with **Jetpack Compose**, **MVVM**, and **Clean Architecture**. It allows users to browse, bookmark, and share news articles, with support for language switching and a modern, responsive UI. The app uses **Kotlin Coroutines** for asynchronous operations and **Hilt** for dependency injection, ensuring a scalable and maintainable architecture.
 
+---
+
+## 📸 Screenshots
 
+| Home Page | Article Details | Bookmarks | Language Selection |
+|-----------|-----------------|-----------|---------------------|
+| <img src="screenshots/home.png" width="200" height="400" /> | <img src="screenshots/details.png" width="200" height="400" /> | <img src="screenshots/bookmarks.png" width="200" height="400" /> | <img src="screenshots/language.png" width="200" height="400" /> |
 
+---
 
+## 📱 Key Screens & Features
 
+- **Home Page**
+  - Browse the latest news articles with horizontal carousel
+  - Real-time search functionality
+- **Article Details**
+  - Bookmark articles for later reading  
+  - Share articles via other apps  
+  - Open full article in browser  
+- **Bookmarks Page**
+  - View and manage saved articles
+- **Language Page**
+  - Instantly switch between supported languages (AZ, EN)
+- **Navigation**
+  - Type-safe navigation using Jetpack Navigation
+- **Responsive UI**
+  - Entire UI built with Jetpack Compose
 
+---
 
+## 🧠 Technologies Used
 
+| Technology | Purpose |
+|------------|---------|
+| **Kotlin** | Core programming language |
+| **Jetpack Compose** | Declarative UI framework |
+| **Kotlin Coroutines** | Asynchronous and concurrent operations |
+| **MVVM** | Architectural pattern |
+| **Clean Architecture** | Layer separation (UI, Domain, Data) |
+| **Hilt** | Dependency injection |
+| **Jetpack Navigation** | Type-safe screen navigation |
+| **Coil** | Image loading |
+| **Kotlinx Serialization** | Data serialization for navigation |
+| **SharedPreferences** | Persist language settings |
+| **Room** (assumed) | Local DB for bookmarks |
+| **Retrofit** (assumed) | Network layer |
+| **StateFlow** | Reactive state management |
 
+---
 
+## ⚙️ Core Features
 
+✅ Browse and search news articles  
+✅ Bookmark articles for offline viewing  
+✅ Share articles via external apps  
+✅ Language switching (AZ / EN) with persistence  
+✅ Responsive UI using Jetpack Compose  
+✅ Type-safe and flexible navigation  
+✅ Proper error/loading state handling  
+✅ Infinite scrolling support (via `LazyColumn`)
 
-Home PageArticle DetailsBookmarksLanguage Selection<img src="screenshots/home.png" width="200" height="400"><img src="screenshots/details.png" width="200" height="400"><img src="screenshots/bookmarks.png" width="200" height="400"><img src="screenshots/language.png" width="200" height="400">
-Note: Replace the placeholder image paths above with actual screenshots from your repository.
+---
 
-📱 Key Screens & Features
+## 🧱 Project Architecture
 
-Home Page – Browse the latest news articles in a horizontal carousel and search for articles by keyword.
-Article Details – View detailed article information with options to:
+### 🧩 Clean Architecture + MVVM
 
-Bookmark articles for later reading.
-Share articles via other apps (e.g., WhatsApp, Email).
-Open the full article in a browser.
+#### 1️⃣ UI Layer
+- Composable Screens (`HomeScreen`, `DetailScreen`, etc.)
+- ViewModels with `StateFlow` for reactive state
+- Mappers for UI ↔ Domain models
 
+#### 2️⃣ Domain Layer
+- Use Cases (`GetNewsUseCase`, `SearchArticlesUseCase`, etc.)
+- Pure Kotlin classes
+- Business logic isolated from UI & data
 
-Bookmark Page – Access saved articles in a list format.
-Language Page – Switch between supported languages (e.g., AZ, EN) with automatic locale updates.
-Search Functionality – Filter news articles in real-time based on user input.
-Navigation – Seamless navigation using Jetpack Navigation with type-safe routes.
-Responsive UI – Built with Jetpack Compose for a modern and fluid user experience.
+#### 3️⃣ Data Layer
+- Repositories for local and remote sources  
+- Retrofit (for API), Room/SharedPreferences (for local)  
+- Mappers for Data ↔ Domain models
 
+---
 
-🧠 Technologies Used
+## 🔁 Coroutine Flow
 
+- **StateFlow** for UI state (Success, Error, Loading)
+- **Suspend** functions for use cases & repositories
+- **Flow** for local data streams (Room)
+- **Retrofit** (suspend) for remote data calls
 
+---
 
+## 🚀 Getting Started
 
+### ✅ Prerequisites
 
+- Android Studio (latest recommended)
+- JDK 11+
+- Kotlin 1.9.x+
+- Gradle 8.x
 
+### 🔨 Installation
 
+Clone the project:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-TechnologyPurposeKotlinCore programming languageJetpack ComposeDeclarative UI frameworkKotlin CoroutinesAsynchronous operations and concurrencyMVVMArchitecture patternClean ArchitectureLayer separation (UI, Domain, Data)HiltDependency injectionJetpack NavigationNavigation and type-safe routingCoilAsynchronous image loadingKotlinx SerializationSerialization for navigation argumentsSharedPreferencesPersist language settingsRoom(Assumed) Local storage for bookmarksRetrofit(Assumed) Network layer for fetching newsStateFlowReactive state management
-
-⚙️ Core Features
-
-✅ Browse and search news articles with real-time filtering.
-✅ Bookmark articles for offline access.
-✅ Share articles via external apps.
-✅ Switch between languages (AZ, EN) with locale persistence.
-✅ Responsive and modern UI with Jetpack Compose.
-✅ Type-safe navigation with custom NavType for complex data.
-✅ Error handling for network failures and loading states.
-✅ Infinite scroll for news articles (assumed based on LazyColumn usage).
-
-
-🧱 Project Architecture
-🧩 Clean Architecture (with Kotlin Coroutines)
-1. UI Layer
-
-Composable functions (HomeScreen, DetailScreen, BookmarkScreen, LanguageScreen).
-ViewModels (HomeViewModel, DetailViewModel, BookmarkViewModel, LanguageViewModel) manage state using StateFlow.
-Mappers to convert domain models to UI models.
-
-2. Domain Layer
-
-Use cases (GetNewsUseCase, SearchArticlesUseCase, SaveNewsToLocalUseCase, etc.) encapsulate business logic.
-Pure Kotlin classes with suspend functions for coroutine support.
-Independent of Android framework for testability.
-
-3. Data Layer
-
-Repositories handle data from local (Room/SharedPreferences) and remote (Retrofit) sources.
-Suspend functions for asynchronous operations.
-Mappers to convert data models to domain models.
-
-
-🔁 Coroutine Flow
-
-ViewModels use StateFlow to emit UI state (UIState.Success, UIState.Error, UIState.Loading).
-Use cases leverage coroutines for network and database operations.
-Repositories (assumed) use Flow for local data (e.g., Room) and suspend functions for network calls (e.g., Retrofit).
-
-
-🚀 Getting Started
-Prerequisites
-
-Android Studio (Latest version recommended)
-JDK 11 or higher
-Kotlin 1.9.x or higher
-Gradle 8.x
-
-Installation
-
-Clone the Repository:
-bashgit clone https://github.com/your-username/news-catcher.git
+```bash
+git clone https://github.com/your-username/news-catcher.git
 cd news-catcher
-
-Open in Android Studio:
-
-Open Android Studio and select Open an existing project.
-Navigate to the cloned repository folder.
-
-
-Add API Key (if applicable):
-
-If using a news API (e.g., NewsAPI), add your API key to Constants.kt:
-kotlinobject Constants {
-    const val KEYWORD = "your-news-api-keyword"
-    const val API_KEY = "your-api-key"
-}
-
-
-
-Sync Project:
-
-Click Sync Project with Gradle Files in Android Studio.
-
-
-Build and Run:
-
-Connect an Android device or emulator.
-Click Run to build and install the app.
-
-
-
-
-🔧 Usage
-
-Home Screen:
-
-Browse news in a horizontal carousel or list.
-Use the search bar to filter articles.
-Click the language button to switch languages.
-
-
-Article Details:
-
-Tap an article to view its details.
-Save or share articles via the menu (three-dot icon).
-Click "Read more" to open the full article in a browser.
-
-
-Bookmarks:
-
-View saved articles in a list.
-Tap an article to revisit its details.
-
-
-Language Selection:
-
-Choose between AZ or EN.
-The app updates its UI and persists the selection.
