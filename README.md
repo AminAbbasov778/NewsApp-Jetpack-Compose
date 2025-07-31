@@ -8,7 +8,7 @@
 
 | Home Page | Article Details | Bookmarks | Language Selection |
 |-----------|-----------------|-----------|---------------------|
-| <img src="Screenshot/Screenshot_20250727-213032.png" width="200" height="400" /> | <img src="Screenshot/Screenshot_20250727-213125.png" width="200" height="400" /> | <img src="Screenshot/Screenshot_20250727-213157.png" width="200" height="400" /> | <img src="Screenshot/Screenshot_20250727-213105.png" width="200" height="400" /> |
+| <img src="Screenshot/Screenshot_20250727-213032.png" width="200" height="400" /> | <img src="Screenshot/Screenshot_20250727-213345.png" width="200" height="400" /> | <img src="Screenshot/Screenshot_20250727-213157.png" width="200" height="400" /> | <img src="Screenshot/Screenshot_20250727-213105.png" width="200" height="400" /> |
 
 ---
 
