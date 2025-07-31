@@ -95,15 +95,6 @@
 
 ---
 
-## 🚀 Getting Started
-
-### ✅ Prerequisites
-
-- Android Studio (latest recommended)
-- JDK 11+
-- Kotlin 1.9.x+
-- Gradle 8.x
-
 ### 🔨 Installation
 
 Clone the project:
